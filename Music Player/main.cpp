@@ -1,6 +1,7 @@
 #include <SDL.h>
 #include "SDL_mixer.h"
 #include <cstdio>
+#include "music_player.h"
 
 int WinMain(int argc, char* argv[]) {
     // Initialize SDL
@@ -24,10 +25,13 @@ int WinMain(int argc, char* argv[]) {
     }
 
     // Play the sound effect
-    Mix_PlayChannel(-1, sound, 0);
+//    Mix_PlayChannel(-1, sound, 0);
 
     // Delay to allow the sound to play
-    SDL_Delay(200000);
+//    SDL_Delay(200000);
+
+    MusicPlayer musicPlayer;
+    musicPlayer.run();
 
     // Free resources and close SDL
     Mix_FreeChunk(sound);
