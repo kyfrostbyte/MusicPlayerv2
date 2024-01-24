@@ -1,0 +1,3 @@
+C:/Users/aaron/Desktop/College Stuff/Applied Programming/CLion/Music Player/cmake-build-debug/CMakeFiles/Music_Player.dir
+C:/Users/aaron/Desktop/College Stuff/Applied Programming/CLion/Music Player/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/aaron/Desktop/College Stuff/Applied Programming/CLion/Music Player/cmake-build-debug/CMakeFiles/rebuild_cache.dir
