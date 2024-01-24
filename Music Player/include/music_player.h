@@ -21,3 +21,4 @@ private:
 };
 
 #endif // MUSIC_PLAYER_H
+
