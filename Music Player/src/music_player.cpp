@@ -62,7 +62,7 @@ void MusicPlayer::run() {
 void MusicPlayer::playPause() {
     if (currentSong == nullptr) {
         // Load background music (down.wav in this case)
-        currentSong = Mix_LoadMUS("down.wav");
+        currentSong = Mix_LoadMUS(R"(C:\Users\aaron\Desktop\College Stuff\Applied Programming\CLion\Music Player\assets\Music\down.wav)");
         if (currentSong == nullptr) {
             std::cerr << "Failed to load background music! SDL_mixer Error: " << Mix_GetError() << std::endl;
             return;
@@ -106,7 +106,7 @@ void MusicPlayer::displayAvailableSongs() {
         // Play the selected song
         if (songChoice == 1) {
             // Play the down.wav file using SDL_mixer
-            Mix_Chunk* sound = Mix_LoadWAV("../down.wav");
+            Mix_Chunk* sound = Mix_LoadWAV(R"(C:\Users\aaron\Desktop\College Stuff\Applied Programming\CLion\Music Player\assets\Music\down.wav)");
             if (sound == nullptr) {
                 std::cerr << "Failed to load sound effect! SDL_mixer Error: " << Mix_GetError() << std::endl;
             } else {

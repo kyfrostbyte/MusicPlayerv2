@@ -17,7 +17,7 @@ int WinMain(int argc, char* argv[]) {
     }
 
     // Load sound effect
-    Mix_Chunk* sound = Mix_LoadWAV("../down.wav");
+    Mix_Chunk* sound = Mix_LoadWAV(R"(C:\Users\aaron\Desktop\College Stuff\Applied Programming\CLion\Music Player\assets\Music\down.wav)");
 
     if (sound == nullptr) {
         fprintf(stderr, "Failed to load sound effect! SDL_mixer Error: %s\n", Mix_GetError());
