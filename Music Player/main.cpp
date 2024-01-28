@@ -3,6 +3,8 @@
 #include <cstdio>
 #include "music_player.h"
 
+
+
 int WinMain(int argc, char* argv[]) {
     // Initialize SDL
     if (SDL_Init(SDL_INIT_AUDIO) < 0) {
@@ -24,12 +26,8 @@ int WinMain(int argc, char* argv[]) {
         return -1;
     }
 
-    // Play the sound effect
-//    Mix_PlayChannel(-1, sound, 0);
 
-    // Delay to allow the sound to play
-//    SDL_Delay(200000);
-
+    // Create instance of music player and run it
     MusicPlayer musicPlayer;
     musicPlayer.run();
 

@@ -63,6 +63,13 @@ build CMakeFiles/Music_Player.dir/src/music_player.cpp.obj: CXX_COMPILER__Music_
   OBJECT_DIR = CMakeFiles\Music_Player.dir
   OBJECT_FILE_DIR = CMakeFiles\Music_Player.dir\src
 
+build CMakeFiles/Music_Player.dir/src/Songs.cpp.obj: CXX_COMPILER__Music_Player_unscanned_Debug C$:/Users/aaron/Desktop/College$ Stuff/Applied$ Programming/CLion/Music$ Player/src/Songs.cpp || cmake_object_order_depends_target_Music_Player
+  DEP_FILE = CMakeFiles\Music_Player.dir\src\Songs.cpp.obj.d
+  FLAGS = -g -std=gnu++20 -fdiagnostics-color=always
+  INCLUDES = -IC:/Users/aaron/Desktop/SDL2-2.28.5/x86_64-w64-mingw32/include/SDL2 -I"C:/Users/aaron/Desktop/College Stuff/Applied Programming/CLion/Music Player/include"
+  OBJECT_DIR = CMakeFiles\Music_Player.dir
+  OBJECT_FILE_DIR = CMakeFiles\Music_Player.dir\src
+
 
 # =============================================================================
 # Link build statements for EXECUTABLE target Music_Player
@@ -71,7 +78,7 @@ build CMakeFiles/Music_Player.dir/src/music_player.cpp.obj: CXX_COMPILER__Music_
 #############################################
 # Link the executable Music_Player.exe
 
-build Music_Player.exe: CXX_EXECUTABLE_LINKER__Music_Player_Debug CMakeFiles/Music_Player.dir/main.cpp.obj CMakeFiles/Music_Player.dir/src/music_player.cpp.obj | C$:/Users/aaron/Desktop/SDL2-2.28.5/x86_64-w64-mingw32/lib/libSDL2.a C$:/Users/aaron/Desktop/SDL2_mixer-2.8.0/x86_64-w64-mingw32/lib/libSDL2_mixer.a C$:/Users/aaron/Desktop/SDL2_mixer-2.8.0/x86_64-w64-mingw32/lib/libSDL2_mixer.a
+build Music_Player.exe: CXX_EXECUTABLE_LINKER__Music_Player_Debug CMakeFiles/Music_Player.dir/main.cpp.obj CMakeFiles/Music_Player.dir/src/music_player.cpp.obj CMakeFiles/Music_Player.dir/src/Songs.cpp.obj | C$:/Users/aaron/Desktop/SDL2-2.28.5/x86_64-w64-mingw32/lib/libSDL2.a C$:/Users/aaron/Desktop/SDL2_mixer-2.8.0/x86_64-w64-mingw32/lib/libSDL2_mixer.a C$:/Users/aaron/Desktop/SDL2_mixer-2.8.0/x86_64-w64-mingw32/lib/libSDL2_mixer.a
   FLAGS = -g
   LINK_FLAGS = -mconsole
   LINK_LIBRARIES = C:/Users/aaron/Desktop/SDL2-2.28.5/x86_64-w64-mingw32/lib/libSDL2.a  -lhid  -lsetupapi  -limm32  -lversion  -lwinmm  C:/Users/aaron/Desktop/SDL2_mixer-2.8.0/x86_64-w64-mingw32/lib/libSDL2_mixer.a  C:/Users/aaron/Desktop/SDL2_mixer-2.8.0/x86_64-w64-mingw32/lib/libSDL2_mixer.a  -lwinmm  -lole32  -loleaut32  -luuid  -lwinmm  -lversion  -limm32  -lsetupapi  -lhid  -lole32  -loleaut32  -luuid  -lversion  -limm32  -lsetupapi  -lhid  -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32

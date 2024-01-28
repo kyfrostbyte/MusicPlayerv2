@@ -6,7 +6,9 @@ set(CMAKE_CXX_STANDARD 20)
 set(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} -mconsole")
 
 # Add your source files
-add_executable(Music_Player main.cpp src/music_player.cpp)
+add_executable(Music_Player main.cpp src/music_player.cpp
+        src/Songs.cpp
+        include/Songs.h)
 
 # Set additional properties if needed
 set_target_properties(Music_Player PROPERTIES WIN32_EXECUTABLE false)
