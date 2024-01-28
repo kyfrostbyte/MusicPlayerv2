@@ -10,7 +10,7 @@ a terminal music player would result in me being exposed so some of the most fun
 set up was difficult for me, but I have a much better understanding of how C++ works as a whole.
 
 
-[Software Demo Video](http://youtube.link.goes.here)
+[Software Demo Video](https://youtu.be/zZsmYdru5FA)
 
 # Development Environment
 
