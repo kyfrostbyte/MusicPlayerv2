@@ -42,4 +42,4 @@ private:
     const std::string getSongNum(int songChoice) const;
 };
 
-#endif // MUSIC_PLAYER_H
+#endif

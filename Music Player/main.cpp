@@ -18,23 +18,8 @@ int WinMain(int argc, char* argv[]) {
         return -1;
     }
 
-    // Load sound effect
-    Mix_Chunk* sound = Mix_LoadWAV(R"(C:\Users\aaron\Desktop\College Stuff\Applied Programming\CLion\Music Player\assets\Music\down.wav)");
-
-    if (sound == nullptr) {
-        fprintf(stderr, "Failed to load sound effect! SDL_mixer Error: %s\n", Mix_GetError());
-        return -1;
-    }
-
-
     // Create instance of music player and run it
     MusicPlayer musicPlayer;
     musicPlayer.run();
-
-    // Free resources and close SDL
-    Mix_FreeChunk(sound);
-    Mix_CloseAudio();
-    SDL_Quit();
-
     return 0;
 }

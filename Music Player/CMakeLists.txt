@@ -1,4 +1,5 @@
 cmake_minimum_required(VERSION 3.27)
+
 project(Music_Player)
 set(CMAKE_WIN32_EXECUTABLE "${PROJECT_NAME}.exe")
 

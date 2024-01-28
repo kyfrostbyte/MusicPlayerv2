@@ -15,7 +15,6 @@ private:
     int duration;
 
 public:
-    // Default constructor with default values
     Songs(const std::string& artist = "", const std::string& title = "", const char* songPath = "", const int& songNum =0);
 
     // Getters
@@ -32,7 +31,7 @@ public:
     void setDuration(int newDuration) { duration = newDuration; }
     void displaySongs() const;
 
-    // Other member functions...
+
 };
 
-#endif // MUSIC_PLAYER_SONGS_H
+#endif

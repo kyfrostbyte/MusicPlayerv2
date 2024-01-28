@@ -1,4 +1,3 @@
-#include "thread"
 #include "Windows.h"
 #include "music_player.h"
 #include <iostream>
@@ -6,15 +5,12 @@
 #include "SDL.h"
 #include "atomic"
 #include "Songs.h"
-#include <vector>
-#include <algorithm>
 #include <future>
 
 MusicPlayer::MusicPlayer() : songs(), currentSong(nullptr), songFinished(false) {
     songs.push_back(Songs("Down", "Jay Sean", R"(C:\Users\aaron\Desktop\College Stuff\Applied Programming\CLion\Music Player\assets\Music\down.wav)", 1));
     songs.push_back(Songs("Dynamite", "Teo Cruz", R"(C:\Users\aaron\Desktop\College Stuff\Applied Programming\CLion\Music Player\assets\Music\Dynamite.wav)", 2));
     songs.push_back(Songs("Stick Season", "Noah Kahn", R"(C:\Users\aaron\Desktop\College Stuff\Applied Programming\CLion\Music Player\assets\Music\Stick Season.wav)", 3));
-
 
     if (Mix_Init(MIX_INIT_MP3) != MIX_INIT_MP3) {
         std::cerr << "SDL_mixer initialization failed! SDL_mixer Error: " << Mix_GetError() << std::endl;
@@ -28,7 +24,6 @@ MusicPlayer::MusicPlayer() : songs(), currentSong(nullptr), songFinished(false) 
 MusicPlayer::~MusicPlayer() {
     Mix_CloseAudio();
 }
-
 
 void MusicPlayer::run() {
     int choice;
@@ -53,33 +48,6 @@ void MusicPlayer::run() {
         }
     }
 }
-
-
-void MusicPlayer::playPause() {
-    if (currentSong == nullptr) {
-        // Load background music (down.wav in this case)
-        currentSong = Mix_LoadMUS(R"(C:\Users\aaron\Desktop\College Stuff\Applied Programming\CLion\Music Player\assets\Music\down.wav)");
-        if (currentSong == nullptr) {
-            std::cerr << "Failed to load background music! SDL_mixer Error: " << Mix_GetError() << std::endl;
-            return;
-        }
-    }
-
-    if (isPlaying) {
-        // Pause music
-        Mix_PauseMusic();
-        std::cout << "Paused the music\n";
-    } else {
-        // Resume or start playing music
-        Mix_ResumeMusic();
-        std::cout << "Playing the music\n";
-    }
-
-    isPlaying = !isPlaying; // Toggle the play/pause state
-}
-
-
-
 
 void MusicPlayer::displayAvailableSongs() {
     std::cout << "Available Songs\n";
@@ -135,16 +103,6 @@ void MusicPlayer::displayAvailableSongs() {
     }
 }
 
-
-
-
-
-
-
-
-
-
-
 void MusicPlayer::displayMenu(){
     // Display menu
     std::cout << "Choose an option:\n";
@@ -155,36 +113,13 @@ void MusicPlayer::displayMenu(){
 
 
 
-
-
-
-
-//// Helper function to get the file path for a selected song
-
-const std::string MusicPlayer::getSongNum(int songChoice) const {
-    switch (songChoice) {
-        case 1:
-            return "Down";
-        case 2:
-            return "Dynamite";
-        case 3:
-            return "Stick Season";
-        default:
-            return "";
-    }
-}
-
 // Modify the musicFinishedCallback function
 void MusicPlayer::musicFinishedCallback() {
-    // Access non-static members using an instance of the class
     MusicPlayer* player = MusicPlayer::getInstance();
-
-    // Set the flag to true when the music finishes
     if (player != nullptr) {
         player->songFinished = true;
     }
 }
-
 
 MusicPlayer* MusicPlayer::getInstance() {
     static MusicPlayer instance;  // Create a single instance on first call
