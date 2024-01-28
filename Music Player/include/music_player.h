@@ -19,7 +19,7 @@ public:
     ~MusicPlayer();
     static void musicFinishedCallback();
     void run();
-    std::vector<Songs> allSongs;
+    std::vector<Songs*> allSongs;
     bool isPlaying;
 
 private:
@@ -27,7 +27,7 @@ private:
     void nextSong();
     void previousSong();
     void displayAvailableSongs();
-    std::vector<std::string> songs;
+    std::vector<Songs> songs;
     Mix_Music* currentSong;
     static MusicPlayer* getInstance();
     void playSongReal(const char *filePath);
@@ -39,6 +39,7 @@ private:
     std::atomic<bool> songFinished;
     const char *getSongPath(int songChoice) const;
 
+    const std::string getSongNum(int songChoice) const;
 };
 
 #endif // MUSIC_PLAYER_H

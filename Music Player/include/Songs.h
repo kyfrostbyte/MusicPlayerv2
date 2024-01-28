@@ -1,39 +1,38 @@
+// Songs.h
+
 #ifndef MUSIC_PLAYER_SONGS_H
 #define MUSIC_PLAYER_SONGS_H
+
 #include <iostream>
 #include <string>
-using namespace std;
 
 class Songs {
-
-
 private:
-    string songPath = "";
-    string title = "";
-    string artist = "";
-    int duration = 0;
+    std::string songPath;
+    std::string title;
+    std::string artist;
+    int songNum;
+    int duration;
 
 public:
-    Songs(const std::string& artist = "", const std::string& title = "");
+    // Default constructor with default values
+    Songs(const std::string& artist = "", const std::string& title = "", const char* songPath = "", const int& songNum =0);
+
     // Getters
-    string getSongPath()    { return this->songPath; }
-    string getTitle()    { return this->title; }
-    string getArtist()      { return this->artist;   }
-    int getDuration()       { return this->duration; }
+    std::string getSongPath() const { return songPath; }
+    std::string getTitle() const { return title; }
+    std::string getArtist() const { return artist; }
+    int getSongNum() const { return songNum; }
+    int getDuration() const { return duration; }
 
-    // Setters
-    void setSongPath(string songPath) { this->songPath = songPath; }
-    void setTitle(string title) { this->title= title; }
-    void setArtist(string artist)     { this->artist = artist; }
-    void setDuration(int duration) { this->duration = duration; }
+    // Setters (if needed)
+    void setSongPath(const std::string& path) { songPath = path; }
+    void setTitle(const std::string& newTitle) { title = newTitle; }
+    void setArtist(const std::string& newArtist) { artist = newArtist; }
+    void setDuration(int newDuration) { duration = newDuration; }
+    void displaySongs() const;
 
-    void displaySongs();
-
-
-
-
+    // Other member functions...
 };
 
-
-
-#endif //MUSIC_PLAYER_SONGS_H
+#endif // MUSIC_PLAYER_SONGS_H

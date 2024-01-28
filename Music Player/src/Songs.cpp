@@ -1,18 +1,12 @@
 #include "Songs.h"
-// Songs.cpp
+#include <iostream>
 
-#include "Songs.h"
-
-Songs::Songs(const std::string& artist, const std::string& title)
-        : artist(artist), title(title) {
+Songs::Songs(const std::string& artist, const std::string& title, const char* songPath, const int& songNum)
+        : artist(artist), title(title), songPath(songPath), songNum(songNum) {
 }
 
-// other member function implementations...
+// Other member function implementations...
 
-void Songs::displaySongs() {
-    cout << this->title << this->artist;
-
+void Songs::displaySongs() const {
+    std::cout << this->title << " - " << this->artist << std::endl;
 }
-
-
-
